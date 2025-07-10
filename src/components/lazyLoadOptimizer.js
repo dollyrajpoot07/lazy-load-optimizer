@@ -1,3 +1,4 @@
+// ✅ src/components/LazyImage.jsx
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
@@ -18,25 +19,14 @@ export default function LazyImage({ src, alt }) {
       { threshold: 0.1 }
     );
 
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
-    }
-
+    if (imgRef.current) observer.observe(imgRef.current);
     return () => observer.disconnect();
   }, []);
 
-  const isValidSrc = typeof src === 'string' && src.trim() !== '';
-
   return (
     <div ref={imgRef} className={styles.lazyImageWrapper}>
-      {isVisible && isValidSrc ? (
-        <Image
-          src={src}
-          alt={alt || 'Image'}
-          width={400}
-          height={300}
-          className={styles.lazyImage}
-        />
+      {isVisible ? (
+        <Image src={src} alt={alt} width={400} height={100} className={styles.lazyImage} />
       ) : (
         <div className={styles.placeholder}>Loading image...</div>
       )}

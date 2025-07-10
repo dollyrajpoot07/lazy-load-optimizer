@@ -1,4 +1,4 @@
-import LazyLoadOptimizer from '@/components/LazyLoadOptimizer';
+import LazyLoadOptimizer from '@/components/lazyImage';
 
 export default function Home() {
   return (

@@ -1,21 +1,23 @@
 .lazyImageWrapper {
   width: 400px;
   height: 300px;
-  margin: 2rem auto;
+  margin: 1rem auto;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
   border: 2px dashed #ccc;
-  background-color: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .lazyImage {
-  border-radius: 8px;
   object-fit: cover;
-  transition: opacity 0.5s ease-in-out;
+  border-radius: 10px;
 }
 
 .placeholder {
-  color: #666;
   font-style: italic;
+  color: #555;
+  font-size: 1.1rem;
 }
